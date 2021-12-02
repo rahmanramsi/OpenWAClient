@@ -78,7 +78,8 @@ class Text extends OpenWA
             "args" => [
                 "to" => Number::format($receiver_number),
                 "url" => $url,
-                "text" => $message
+                "text" => $message,
+                // "thumbnail" => $url
             ]
         ]);
 

@@ -32,13 +32,11 @@ class OpenWAClient
         $this->initiation = new Initiation($base_uri, $api_key);
 
         $server = $this->Server();
-        if (!$server->isAccessible()){
+        if (!$server->isAccessible()) {
             throw new OpenWAException("The server is inaccessible, make sure you put a right host!");
-        }
-        elseif (!$server->callFromFactory()->isApiKeyValid()){
+        } elseif (!$server->callFromFactory()->isApiKeyValid()) {
             throw new OpenWAException("Invalid API Key");
-        }
-        elseif (!$server->isPhoneConnected()){
+        } elseif (!$server->isPhoneConnected()) {
             throw new OpenWAException("Phone is disconnected!, make sure your phone is connected from internet");
         }
     }
